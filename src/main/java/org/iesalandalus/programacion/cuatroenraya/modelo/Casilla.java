@@ -15,9 +15,9 @@ public class Casilla {
 
     public void setFicha(Ficha ficha) throws CuatroEnRayaExcepcion {
         if (this.ficha != null) {
-            throw new CuatroEnRayaExcepcion("La casilla ya está ocupada");
+            throw new CuatroEnRayaExcepcion("La casilla ya contiene una ficha.");
         }
-        this.ficha = Objects.requireNonNull(ficha, "La ficha no puede ser nula");
+        this.ficha = Objects.requireNonNull(ficha, "No se puede poner una ficha nula.");
     }
 
     public boolean estaOcupada() {
@@ -26,6 +26,11 @@ public class Casilla {
 
     @Override
     public String toString() {
-        return String.format("%s", (ficha != null) ? ficha.toString() : " ");
+        if (ficha != null) {
+            return String.valueOf(ficha.toString().charAt(0));
+        } else {
+            return " ";
+        }
     }
+
 }
