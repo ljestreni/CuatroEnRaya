@@ -11,10 +11,10 @@ public record Jugador(String nombre, Ficha colorFichas) {
 
     private String validarNombre(String nombre) {
         Objects.requireNonNull(nombre, "El nombre no puede ser nulo.");
-        if (nombre.trim().isEmpty()) {
+        if (nombre.isEmpty()) {
             throw new IllegalArgumentException("El nombre no puede estar en blanco.");
         }
-        return nombre.trim();
+        return nombre;
     }
 
     private Ficha validarColorFichas(Ficha colorFichas) {

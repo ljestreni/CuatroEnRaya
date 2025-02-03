@@ -50,7 +50,7 @@ public class Tablero {
         }
     }
 
-    private void comprobarColumna(int columna) {
+    public void comprobarColumna(int columna) {
         if (columna < 0 || columna >= COLUMNAS) {
             throw new IllegalArgumentException("Columna incorrecta.");
         }
@@ -188,6 +188,7 @@ public class Tablero {
 
     @Override
     public String toString() {
+
         StringBuilder sb = new StringBuilder();
         for (int fila = 0; fila < FILAS; fila++) {
             sb.append("|");
